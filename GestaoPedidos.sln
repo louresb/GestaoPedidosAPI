@@ -1,9 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35919.96 d17.13
+VisualStudioVersion = 17.13.35919.96
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestaoPedidosAPI", "GestaoPedidosAPI\GestaoPedidosAPI.csproj", "{A965498A-0F63-44DE-8767-0AFCA2D2BFAB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestaoPedidos.Api", "src\GestaoPedidos.Api\GestaoPedidos.Api.csproj", "{0FEAAFB0-3CA5-BB0E-E735-53C3E592FC17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestaoPedidos.Domain", "src\GestaoPedidos.Domain\GestaoPedidos.Domain.csproj", "{E49124C0-4A40-1D7F-45EA-CE6A699FB2B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestaoPedidos.Domain.Interfaces", "src\GestaoPedidos.Domain.Interfaces\GestaoPedidos.Domain.Interfaces.csproj", "{AB5C3A94-9685-3309-9398-F30D726F0829}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestaoPedidos.Infra", "src\GestaoPedidos.Infra\GestaoPedidos.Infra.csproj", "{34107657-E3F0-1B42-DCC5-B89FCE02C7E9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +19,22 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A965498A-0F63-44DE-8767-0AFCA2D2BFAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A965498A-0F63-44DE-8767-0AFCA2D2BFAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A965498A-0F63-44DE-8767-0AFCA2D2BFAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A965498A-0F63-44DE-8767-0AFCA2D2BFAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FEAAFB0-3CA5-BB0E-E735-53C3E592FC17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FEAAFB0-3CA5-BB0E-E735-53C3E592FC17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FEAAFB0-3CA5-BB0E-E735-53C3E592FC17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FEAAFB0-3CA5-BB0E-E735-53C3E592FC17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E49124C0-4A40-1D7F-45EA-CE6A699FB2B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E49124C0-4A40-1D7F-45EA-CE6A699FB2B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E49124C0-4A40-1D7F-45EA-CE6A699FB2B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E49124C0-4A40-1D7F-45EA-CE6A699FB2B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB5C3A94-9685-3309-9398-F30D726F0829}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB5C3A94-9685-3309-9398-F30D726F0829}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB5C3A94-9685-3309-9398-F30D726F0829}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB5C3A94-9685-3309-9398-F30D726F0829}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34107657-E3F0-1B42-DCC5-B89FCE02C7E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34107657-E3F0-1B42-DCC5-B89FCE02C7E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34107657-E3F0-1B42-DCC5-B89FCE02C7E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34107657-E3F0-1B42-DCC5-B89FCE02C7E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
