@@ -18,9 +18,10 @@ namespace GestaoPedidos.Infra.Repositories
             await _context.Pedidos.AddAsync(pedido);
         }
 
-        public async Task AtualizarAsync(Pedido pedido)
+        public Task AtualizarAsync(Pedido pedido)
         {
             _context.Pedidos.Update(pedido);
+            return Task.CompletedTask;
         }
 
         public async Task<Pedido> ObterPorIdAsync(int id)
