@@ -11,13 +11,15 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
+	<ItemGroup>
+		<ProjectReference Include="..\GestaoPedidos.Domain.Interfaces\GestaoPedidos.Domain.Interfaces.csproj" />
+		<ProjectReference Include="..\GestaoPedidos.Domain\GestaoPedidos.Domain.csproj" />
+		<ProjectReference Include="..\GestaoPedidos.Infra\GestaoPedidos.Infra.csproj" />
+	</ItemGroup>
+
   <ItemGroup>
-    <ProjectReference Include="..\GestaoPedidos.Domain.Interfaces\GestaoPedidos.Domain.Interfaces.csproj" />
-    <ProjectReference Include="..\GestaoPedidos.Domain\GestaoPedidos.Domain.csproj" />
-    <ProjectReference Include="..\GestaoPedidos.Infra\GestaoPedidos.Infra.csproj" />
-    <ProjectReference Include="..\GestaoPedidos.Domain.Interfaces\GestaoPedidos.Domain.Interfaces.csproj" />
-    <ProjectReference Include="..\GestaoPedidos.Domain\GestaoPedidos.Domain.csproj" />
-    <ProjectReference Include="..\GestaoPedidos.Infra\GestaoPedidos.Infra.csproj" />
+    <Folder Include="Controllers\v1\ResponseExamples\" />
+    <Folder Include="Controllers\v1\RequestExamples\" />
   </ItemGroup>
 
 </Project>

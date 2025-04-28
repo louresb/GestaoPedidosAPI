@@ -23,6 +23,13 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+// Seed dos dados
+using (var scope = app.Services.CreateScope())
+{
+    var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    GestaoPedidos.Infra.Seed.SeedData.Inicializar(context);
+}
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
