@@ -83,7 +83,7 @@ git clone https://github.com/louresb/GestaoPedidosAPI.git
 2. Navegue até a pasta da API:
 
 ```bash
-cd src/GestaoPedidos.Api
+cd GestaoPedidosAPI/src/GestaoPedidos.Api
 ```
 
 3. Restaure as dependências:
@@ -95,7 +95,7 @@ dotnet restore
 4. Execute a aplicação:
 
 ```bash
-dotnet run
+dotnet watch run
 ```
 
 5. Acesse o Swagger para explorar a API:
