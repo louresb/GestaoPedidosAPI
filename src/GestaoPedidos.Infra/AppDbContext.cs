@@ -7,6 +7,7 @@ namespace GestaoPedidos.Infra
     {
         public DbSet<Pedido> Pedidos { get; set; }
         public DbSet<Produto> Produtos { get; set; }
+        public DbSet<PedidoProduto> PedidoProdutos { get; set; }
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
@@ -17,9 +18,14 @@ namespace GestaoPedidos.Infra
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<Pedido>()
-                .HasMany(p => p.Produtos);
+                .HasMany(p => p.Itens)
+                .WithOne(i => i.Pedido)
+                .HasForeignKey(i => i.PedidoId);
 
-            modelBuilder.Entity<Produto>();
+            modelBuilder.Entity<PedidoProduto>()
+                .HasOne(pp => pp.Produto)
+                .WithMany()
+                .HasForeignKey(pp => pp.ProdutoId);
         }
     }
 }

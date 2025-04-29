@@ -24,23 +24,26 @@ namespace GestaoPedidos.Infra.Repositories
             return Task.CompletedTask;
         }
 
-        public async Task<Pedido> ObterPorIdAsync(int id)
+        public async Task<Pedido?> ObterPorIdAsync(int id)
         {
             return await _context.Pedidos
-                .Include(p => p.Produtos)
+                .Include(p => p.Itens)
+                    .ThenInclude(i => i.Produto)
                 .FirstOrDefaultAsync(p => p.Id == id);
         }
 
         public async Task<IEnumerable<Pedido>> ListarAsync()
         {
             return await _context.Pedidos
-                .Include(p => p.Produtos)
+                .Include(p => p.Itens)
+                    .ThenInclude(i => i.Produto)
                 .ToListAsync();
         }
 
-        public async Task RemoverAsync(Pedido pedido)
+        public Task RemoverAsync(Pedido pedido)
         {
             _context.Pedidos.Remove(pedido);
+            return Task.CompletedTask;
         }
 
         public async Task SalvarAlteracoesAsync()

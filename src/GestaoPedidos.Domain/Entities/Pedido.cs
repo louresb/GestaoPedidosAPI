@@ -6,24 +6,51 @@ namespace GestaoPedidos.Domain.Entities
     {
         public int Id { get; set; }
         public PedidoStatus Status { get; private set; } = PedidoStatus.Aberto;
-        public List<Produto> Produtos { get; private set; } = new();
+        public List<PedidoProduto> Itens { get; private set; } = new();
 
-        public void AdicionarProduto(Produto produto)
+        public void AdicionarProduto(Produto produto, int quantidade)
         {
             if (Status == PedidoStatus.Fechado) return;
-            Produtos.Add(produto);
+
+            var itemExistente = Itens.FirstOrDefault(i => i.ProdutoId == produto.Id);
+
+            if (itemExistente != null)
+            {
+                itemExistente.Quantidade += quantidade;
+            }
+            else
+            {
+                Itens.Add(new PedidoProduto
+                {
+                    Pedido = this,
+                    ProdutoId = produto.Id,
+                    Produto = produto,
+                    Quantidade = quantidade
+                });
+            }
         }
 
-        public void RemoverProduto(Produto produto)
+        public void RemoverProduto(int produtoId)
         {
             if (Status == PedidoStatus.Fechado) return;
-            Produtos.Remove(produto);
+
+            var item = Itens.FirstOrDefault(i => i.ProdutoId == produtoId);
+
+            if (item != null)
+            {
+                Itens.Remove(item);
+            }
         }
 
         public void FecharPedido()
         {
-            if (Produtos.Count == 0) return;
+            if (Itens.Count == 0) return;
             Status = PedidoStatus.Fechado;
+        }
+
+        public decimal CalcularValorTotal()
+        {
+            return Itens.Sum(item => item.Produto.Preco * item.Quantidade);
         }
     }
 }

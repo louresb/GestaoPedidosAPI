@@ -13,9 +13,9 @@ namespace GestaoPedidos.Infra.Seed
 
             var produtos = new List<Produto>
             {
-                new Produto { Nome = "Produto A", Preco = 10 },
-                new Produto { Nome = "Produto B", Preco = 20 },
-                new Produto { Nome = "Produto C", Preco = 30 }
+                new Produto { Nome = "Produto A", Preco = 10.10m },
+                new Produto { Nome = "Produto B", Preco = 20.25m },
+                new Produto { Nome = "Produto C", Preco = 30.50m }
             };
 
             context.Produtos.AddRange(produtos);
