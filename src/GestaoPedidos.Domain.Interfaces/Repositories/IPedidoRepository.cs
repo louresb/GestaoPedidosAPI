@@ -4,7 +4,7 @@ namespace GestaoPedidos.Domain.Interfaces.Repositories
 {
     public interface IPedidoRepository
     {
-        Task<Pedido> ObterPorIdAsync(int id);
+        Task<Pedido?> ObterPorIdAsync(int id);
         Task<IEnumerable<Pedido>> ListarAsync();
         Task AdicionarAsync(Pedido pedido);
         Task AtualizarAsync(Pedido pedido);

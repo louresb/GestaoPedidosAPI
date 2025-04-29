@@ -19,7 +19,7 @@ namespace GestaoPedidos.Infra.Repositories
             await _context.Produtos.AddAsync(produto);
         }
 
-        public async Task<Produto> ObterPorIdAsync(int id)
+        public async Task<Produto?> ObterPorIdAsync(int id)
         {
             return await _context.Produtos.FindAsync(id);
         }

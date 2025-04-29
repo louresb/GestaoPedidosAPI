@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -16,10 +16,5 @@
 		<ProjectReference Include="..\GestaoPedidos.Domain\GestaoPedidos.Domain.csproj" />
 		<ProjectReference Include="..\GestaoPedidos.Infra\GestaoPedidos.Infra.csproj" />
 	</ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Controllers\v1\ResponseExamples\" />
-    <Folder Include="Controllers\v1\RequestExamples\" />
-  </ItemGroup>
 
 </Project>
