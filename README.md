@@ -190,7 +190,3 @@ dotnet test
 | Produto A | 10,10      |
 | Produto B | 20,25      |
 | Produto C | 30,50      |
-
-## 📄 Licença
-
-Este projeto está licenciado sob a [MIT License](https://github.com/louresb/GestaoPedidosAPI/blob/main/LICENSE).
